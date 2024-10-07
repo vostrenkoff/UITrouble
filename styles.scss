@@ -1,34 +1,74 @@
 body {
-    text-align: center;
-    padding: 0;
-    border: 0;
-    margin: 0;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-.header {
-    margin-bottom: 20px;
+header #fixed-box {
+  position: relative;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+  background: #F2F1FF;
+  color: #333333;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  // will-change: background;
+  transition: all 0.2s ease-in-out;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header button {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 h1 {
-    color: #EFEFEF; 
+  color: #EFEFEF;
 }
 
 #unity-canvas {
-    width: 960px;
-    height: 600px;
-    background: #231F20;
+  width: 960px;
+  height: 600px;
+  background: #231F20;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: rgb(255, 0, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
+}
+
+/* Обеспечим отступ под фиксированным header */
+.content {
+  padding-top: 80px;
+}
+
+/* Добавим контент для увеличения длины страницы */
+.extra-content {
+  margin: 20px;
+  text-align: left;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.extra-content p {
+  line-height: 1.6;
+  font-size: 16px;
+  color: #333;
 }
