@@ -1,3 +1,11 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   text-align: center;
   padding: 0;
@@ -5,44 +13,63 @@ body {
   font-family: Arial, sans-serif;
 }
 
-header #fixed-box {
+.header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 3;
-  background: #F2F1FF;
-  color: #333333;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  // will-change: background;
-  transition: all 0.2s ease-in-out;
+  height: 70px;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 24px;
+.header-left {
+  display: flex;
+  align-items: center;
 }
 
-.header button {
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
+.header-left button {
+  margin-right: 10px;
 }
 
-h1 {
-  color: #EFEFEF;
+.logo-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-#unity-canvas {
-  width: 960px;
-  height: 600px;
-  background: #231F20;
+.logo-container img {
+  height: 57px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.pdf-container {
+  flex-grow: 1;
+  height: 100%;
+  overflow: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pdf-page {
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 800px;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
 }
 
 button {
   padding: 10px 20px;
-  background-color: #4CAF50;
-  color: rgb(255, 0, 0);
+  background-color: #a704f3;
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -50,15 +77,13 @@ button {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #63106e;
 }
 
-/* Обеспечим отступ под фиксированным header */
 .content {
   padding-top: 80px;
 }
 
-/* Добавим контент для увеличения длины страницы */
 .extra-content {
   margin: 20px;
   text-align: left;
@@ -71,4 +96,8 @@ button:hover {
   line-height: 1.6;
   font-size: 16px;
   color: #333;
+}
+
+.controls {
+  display: none;
 }

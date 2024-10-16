@@ -1,3 +1,11 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
   text-align: center;
   padding: 0;
@@ -5,70 +13,75 @@ body {
   font-family: Arial, sans-serif;
 }
 
-header #fixed-box {
-  position: relative;
+.header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
   top: 0;
-  right: 0;
-  left: 0;
-  z-index: 3;
-  background: #F2F1FF;
-  color: #333333;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
-  /* // will-change: background; */
-  transition: all 0.2s ease-in-out;
+  width: 100%;
+  z-index: 1000;
+  height: 70px;
 }
 
-.header h1 {
+.logo-container {
+  padding-left: 20px;
+}
+
+.logo-container img {
+  height: 57px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.header-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.header-center button {
+  margin: 0 10px;
+}
+
+.pdf-container {
+  margin-top: 80px; /* Чтобы не перекрывать хедер */
+}
+
+.pdf-page {
+  margin: 20px auto;
+  display: block;
+}
+
+/* Стили для футера, если он будет добавлен */
+.footer {
+  background-color: #4a4a4a;
+  color: white;
+  padding: 20px 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-logo {
+  height: 40px;
+  margin-bottom: 10px;
+}
+.footer-link {
+  height: 15px;
+  margin-bottom: 25px;
+}
+
+.footer p {
   margin: 0;
-  font-size: 24px;
-}
-
-.header button {
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-h1 {
-  color: #000000;
-}
-
-#unity-canvas {
-  width: 960px;
-  height: 600px;
-  background: #231F20;
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #a704f3;
-  color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #63106e;
-}
-
-/* Обеспечим отступ под фиксированным header */
-.content {
-  padding-top: 80px;
-}
-
-/* Добавим контент для увеличения длины страницы */
-.extra-content {
-  margin: 20px;
-  text-align: left;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.extra-content p {
-  line-height: 1.6;
-  font-size: 16px;
-  color: #333;
+  font-size: 7px;
 }
