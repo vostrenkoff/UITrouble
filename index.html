@@ -5,6 +5,180 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | PointAndClickIMT_S</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            background-color: #000000;
+            
+        }
+        .content {
+          /* padding-top: 100px; */
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            margin: -10px;
+            background-color: rgba(46,46,48,1);
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header .logo-container img {
+            height: 50px;
+        }
+
+        .header-center,
+        .header-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-center button,
+        .header-right button {
+            background-color: #c64762;
+            color: #000;
+            border: 2px solid #000;
+            padding: 10px 75px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .header-center button:hover,
+        .header-right button:hover {
+            background-color: #c63c68;
+            color: #000;
+            border: 2px solid #000;
+        }
+
+        .info-section {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px auto;
+            padding: 15px;
+            width: 90%;
+            background-color: #000000;
+            border-radius: 10px;
+        }
+
+        .info-column {
+            background-color: #dd9b3d;
+            border-radius: 15px;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
+        .info-column.over-ons {
+            flex: 1; /* 1 часть из 3 */
+            margin-right: 10px;
+        }
+
+        .info-column.instructions {
+            flex: 2; /* 2 части из 3 */
+            margin-left: 10px;
+        }
+
+        .info-column h2 {
+            text-align: center;
+            background-color: #dd4d79;
+            padding: 10px;
+            border-radius: 15px;
+            margin: 0px;
+        }
+        .info-section h2 {
+            grid-column: 1 / -1; /* Заголовок занимает всю ширину */
+            text-align: center;
+            background-color: #dd4d79;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        /* Instructions Grid */
+        .instructions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Три колонки в первом ряду */
+            gap: 20px; /* Расстояние между элементами */
+            margin-top: 20px;
+        }
+
+        /* Два последних элемента делят второй ряд */
+        /* Последние два элемента */
+        /* Последние два элемента */
+        .instruction-item:nth-last-child(2),
+        .instruction-item:last-child {
+            grid-column: span 1 / span 1; /* Каждый элемент занимает половину строки */
+        }
+
+        .instruction-item:nth-last-child(2) {
+            grid-column: 1 / 2; /* Первый занимает левую половину */
+            justify-self: center; /* Центрирование внутри ячейки */
+        }
+
+        .instruction-item:last-child {
+            grid-column: 2 / 3; /* Второй занимает правую половину */
+            justify-self: center; /* Центрирование внутри ячейки */
+        }
+
+        .instruction-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            background-color: #f9f9f900;
+            border-radius: 10px;
+        }
+        .info-column.over-ons p {
+    margin: 20px; /* Добавляем отступы со всех сторон */
+    color: #000;
+}
+.info-column h2 {
+            text-align: center;
+            background-color: #dd4d79;
+            padding: 10px;
+            border-radius: 15px;
+            margin: 0;
+            color: #000; /* Заголовок Over Ons и Instructions становится чёрным */
+        }
+
+        .instruction-item img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        img[src="ui_mouse.png"] {
+            width: 90px;
+            height: 115px;
+        }
+        .instruction-item span {
+            font-size: 0.9rem;
+            line-height: 1.4;
+            max-width: 150px;
+            color: #000; /* Текст Instruction Items становится чёрным */
+        }
+
+        .game-container {
+            width: 1080px;
+            height: 720px;
+            margin: 20px auto;
+            padding: 10px;
+            border: 5px solid #333;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(46,46,48,1);
+            background-color: #2e2e30;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        #unity-canvas {
+            border-radius: 10px;
+            width: 100%;
+            max-width: 1920px;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
   <div class="page-container">
@@ -26,13 +200,50 @@
       <div class="game-container">
           <canvas id="unity-canvas" width="960" height="600"></canvas>
       </div>
+      
+      <div class="info-section">
+        <!-- Over ons -->
+        <div class="info-column over-ons">
+          <h2>Over ons</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+        
+        <!-- Instructions -->
+        <div class="info-column instructions">
+          <h2>Instructions</h2>
+          <div class="instructions-grid">
+            <div class="instruction-item">
+            <img src="ui_mouse.png" alt="Mouse Icon">
+            <span>Use your mouse to navigate through the game.</span>
+        </div>
+        <div class="instruction-item">
+            <img src="ui_scope.png" alt="Cursor Icon">
+            <span>Aim with the mouse cursor where you wish to move.</span>
+        </div>
+        <div class="instruction-item">
+            <img src="ui_finger.png" alt="Hand Icon">
+            <span>Use your cursor to interact with objects and NPCs in the game.</span>
+        </div>
+
+        <!-- Второй ряд -->
+        <div class="instruction-item">
+            <img src="ui_paper.png" alt="Checklist Icon">
+            <span>Complete the to-do list on each location before moving on.</span>
+        </div>
+        <div class="instruction-item">
+            <img src="ui_party.png" alt="Party Icon">
+            <span>Have fun and enjoy the game!</span>
+        </div>
+          </div>
+        </div>
+      </div>
+      
       <div class="extra-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
       </div>
     </div>
 
-    <!-- Добавляем футер -->
-    <footer class="footer">
+    <!-- <footer class="footer">
       <div class="footer-content">
         <div class="logo-container">
           <button onclick="window.location.href='index.html'">Home</button>
@@ -51,8 +262,7 @@
           <p>© 2023 All Rights Reserved.</p>
       </div>
     </footer>
-    
-  </div>
+  </div> -->
 
   <script src="Build/PNCBuild.loader.js"></script>
   <script>

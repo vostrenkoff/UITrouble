@@ -1,4 +1,4 @@
-body, html {
+/* body, html {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -48,7 +48,7 @@ body {
 }
 
 .pdf-container {
-  margin-top: 80px; /* Чтобы не перекрывать хедер */
+  margin-top: 80px;
 }
 
 .pdf-page {
@@ -56,7 +56,6 @@ body {
   display: block;
 }
 
-/* Стили для футера, если он будет добавлен */
 .footer {
   background-color: #4a4a4a;
   color: white;
@@ -84,4 +83,4 @@ body {
 .footer p {
   margin: 0;
   font-size: 7px;
-}
+} */
