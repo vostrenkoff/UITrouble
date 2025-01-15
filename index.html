@@ -7,8 +7,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <style>
         body {
-            background-color: #000000;
-            
+            background-color: rgba(46,46,48,1);
         }
         .content {
           /* padding-top: 100px; */
@@ -36,20 +35,21 @@
 
         .header-center button,
         .header-right button {
-            background-color: #c64762;
-            color: #000;
-            border: 2px solid #000;
+            background-color: #844494;
+            color: #ffffff;
+            border: 2px solid #844494;
             padding: 10px 75px;
             border-radius: 25px;
             cursor: pointer;
             font-size: 20px;
+            font-weight: bold;
         }
 
         .header-center button:hover,
         .header-right button:hover {
-            background-color: #c63c68;
-            color: #000;
-            border: 2px solid #000;
+            background-color: #844494;
+            color: #ffffff;
+            border: 2px solid #ffffff;
         }
 
         .info-section {
@@ -58,12 +58,12 @@
             margin: 20px auto;
             padding: 15px;
             width: 90%;
-            background-color: #000000;
+            background-color: rgba(46,46,48,1);
             border-radius: 10px;
         }
 
         .info-column {
-            background-color: #dd9b3d;
+            background-color: #e1d1e4;
             border-radius: 15px;
             color: #fff;
             font-family: Arial, sans-serif;
@@ -81,7 +81,7 @@
 
         .info-column h2 {
             text-align: center;
-            background-color: #dd4d79;
+            background-color: #ac84bc;
             padding: 10px;
             border-radius: 15px;
             margin: 0px;
@@ -127,15 +127,17 @@
         }
         .info-column.over-ons p {
     margin: 20px;
-    color: #000;
+    color: #844494;
+    font-weight: bold;
+    font-size: large;
 }
 .info-column h2 {
             text-align: center;
-            background-color: #dd4d79;
+            background-color: #844494;
             padding: 10px;
             border-radius: 15px;
             margin: 0;
-            color: #000;
+            color: #ffffff;
         }
 
         .instruction-item img {
@@ -148,10 +150,11 @@
             height: 115px;
         }
         .instruction-item span {
-            font-size: 0.9rem;
+            font-size: 1.0rem;
+            font-weight: bold;
             line-height: 1.4;
             max-width: 150px;
-            color: #000; 
+            color: #844494;
         }
 
         .game-container {
@@ -159,13 +162,13 @@
             height: 720px;
             margin: 20px auto;
             padding: 10px;
-            border: 5px solid #333;
+            border: 5px solid #844494;
             border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(46,46,48,1);
-            background-color: #2e2e30;
+            box-shadow: 0 4px 10px #844494;
+            background-color: #333;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            /* justify-content: center; */
+            /* align-items: center; */
             
         }
 
@@ -182,17 +185,19 @@
         }
 
         .fullscreen-button button {
-            background-color: #4caf50;
-            color: #fff;
+            background-color: #e1d1e400;
+            color: #844494;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
             font-size: 18px;
+            font-weight: bold;
         }
 
         .fullscreen-button button:hover {
-            background-color: #45a049;
+            background-color: #d37fe2;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -209,10 +214,10 @@
       <div class="header-center">
           <button onclick="window.location.href='index.html'">Home</button>
           <button onclick="window.location.href='index.html'">About</button>
-          <button onclick="window.location.href='devlog.html'">Dev Log</button>
+          
       </div>
       <div class="header-right">
-        <button onclick="window.location.href='index.html'">Play</button>
+        <button onclick="window.location.href='devlog.html'">Dev Log</button>
        </div>
     </div>
 
